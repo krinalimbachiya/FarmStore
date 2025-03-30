@@ -11,7 +11,7 @@ const page = () => {
 
     const findColdStores = async () => {
         try{
-            const coldStorages = await axios.get("/api/coldstores");
+            const coldStorages = await axios.get(`${process.env.NEXT_PUBLIC_APP_URL}/api/coldstores`);
             const params = new URLSearchParams({
                 data: JSON.stringify({
                     storages: {coldStorages},
@@ -26,7 +26,7 @@ const page = () => {
 
     const findDryStores = async () => {
         try{
-            const dryStorages = await axios.get("/api/drystores");
+            const dryStorages = await axios.get(`${process.env.NEXT_PUBLIC_APP_URL}/api/drystores`);
             const params = new URLSearchParams({
                 data: JSON.stringify({
                     storages: {dryStorages},
